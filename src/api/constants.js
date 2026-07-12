@@ -1,9 +1,7 @@
 import dotenv from "dotenv";
 
-export const {
-  parsed: { AMC_API_KEY, BACKUP_URL },
-} = dotenv.config();
-
+export const AMC_API_KEY = import.meta.env.VITE_AMC_API_KEY;
+export const BACKUP_URL = import.meta.env.VITE_BACKUP_URL;
 export const AMC_FORMATS = {
   imax: "IMAX 70MM",
   dolby: "Dolby",
@@ -35,9 +33,10 @@ export const getQueryParamString = (pageNum, pageSize, sortBy) => {
 
 export const getLocationPath = (state) => `/v2/locations/states/${state}`;
 
+export const getTheatresPath = () => `/api/theatres`;
 export const getDefaultTheatreShowtimePath = (date) =>
   getTheatreShowtimePath(LINCOLN_13, date);
 export const getTheatreShowtimePath = (amcTheatreId, date) =>
-  `${BACKUP_URL}/showtimes?theatre_id=${amcTheatreId}&date=${date}&chain=amc`;
-export const getTheatreSeatsPath = (showtimeId, auditorium) =>
-  `${BACKUP_URL}/seats?showtime_id=${showtimeId}&chain=amc&theatre_id=amc-2116&auditorium=${auditorium}`;
+  `/api/showtimes?theatre_id=${amcTheatreId}&date=${date}&chain=amc`;
+export const getTheatreSeatsPath = (showtimeId, auditorium, theatreId) =>
+  `/api/seats?showtime_id=${showtimeId}&chain=amc&theatre_id=${theatreId}&auditorium=${auditorium}`;

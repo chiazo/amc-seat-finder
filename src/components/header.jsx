@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="masthead">
       <Link to="/">
-        <h1 className="site-title">swap-clothes</h1>
+        <h1 className="site-title">amc-seat-finder</h1>
       </Link>
       <div className="nav-links">
         {pages.map(({ name, path }) => (

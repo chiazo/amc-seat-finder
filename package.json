@@ -6,7 +6,6 @@
   "homepage": "https://chiazo.github.io/amc-seat-finder",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^5.3.3",
     "dotenv": "^17.4.2",
@@ -14,16 +13,15 @@
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^0.0.0",
     "react-social-icons": "^6.18.0",
     "react-type-animation": "^3.2.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -46,7 +44,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@vitejs/plugin-react": "^6.0.3",
     "ajv": "^8.20.0",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "jsdom": "^29.1.1",
+    "vite": "^8.1.4",
+    "vitest": "^4.1.10"
   }
 }
